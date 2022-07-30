@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="d-flex justify-content-between align-items-center col-12">
+        <h1 class="text-left">Sasquatch Websighting</h1>
+        <div>
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+            <a href="/dashboard" class="align-items-right btn btn-info"><strong>Dashboard</strong></a>
+            <a href="/logout" class="btn btn-info"><strong>Logout</strong></a>
+        </div>
+    </div>
+
+
+    <form action="/update/sighting" method="post" class="col-11 p-4 my-4 mx-auto">
+        <h1>Edit this Sightings</h1>
+        <div class="d-flex justify-content-around">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" name="location" class="form-control" value="{{ edit.location }}">
+                </div>
+                <div class="form-group">
+                    <label for="happend">What Happened:</label>
+                    <textarea name="happend"  cols="30" rows="5" class="form-control">"{{ edit.happend }}"</textarea>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="date">Date of Siting:</label>
+                    <input type="date" name="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="count"># of Sasquatches:</label>
+                    <select name="count">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                </div>
+            </div>
+
+        </div>
+        <br>
+            <input type="submit" value="Report" class="btn btn-primary">
+            
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+</head>
+<body>
+    <div class="d-flex justify-content-between align-items-center col-12">
+        <h1 class="text-left">Sasquatch Websighting</h1>
+        <div>
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+            <a href="/dashboard" class="align-items-right btn btn-info"><strong>Dashboard</strong></a>
+            <a href="/logout" class="btn btn-info"><strong>Logout</strong></a>
+        </div>
+    </div>
+
+
+    <div class="card col-10 mx-auto my-5 bg-dark text-light">
+        <div class="card-body">
+            <div>
+                <h1>{{ sasquatch.location }} on {{sasquatch.date.strftime('%m %d %Y')}}</h1>
+            </div>
+            <h2>What Happend: </h2>
+            <h3>{{ sasquatch.happend }}</h3>
+            <h4># of Sasquatches: {{ sasquatch.count }}</h4>
+            <h4>Post By: {{sasquatch.creator.first_name}} {{sasquatch.creator.last_name}}</h4>
+        </div>
+    </div>
+</body>
+</html>
